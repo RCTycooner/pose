@@ -342,7 +342,7 @@ namespace Pose.IL
             {
                 ilGenerator.Emit(OpCodes.Ldtoken, constructor.DeclaringType);
                 ilGenerator.Emit(OpCodes.Call, s_getTypeFromHandleMethod);
-                ilGenerator.Emit(OpCodes.Call, s_getUninitializedObjectMethod);
+                //ilGenerator.Emit(OpCodes.Call, s_getUninitializedObjectMethod);
                 ilGenerator.Emit(OpCodes.Dup);
                 ilGenerator.Emit(OpCodes.Stloc_1);
             }
