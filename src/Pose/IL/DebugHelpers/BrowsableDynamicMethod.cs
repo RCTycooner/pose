@@ -5,7 +5,7 @@ using System.Reflection.Emit;
 
 namespace Pose.IL.DebugHelpers
 {
-    internal class BrowsableDynamicMethod : MethodInfo
+    public class BrowsableDynamicMethod : MethodInfo
     {
         private readonly DynamicMethod m_method;
 
@@ -37,7 +37,7 @@ namespace Pose.IL.DebugHelpers
 
         public override object[] GetCustomAttributes(Type attributeType, bool inherit) => throw new NotImplementedException();
 
-        public override Type[] GetGenericArguments() => Array.Empty<Type>();
+        public override Type[] GetGenericArguments() => new Type[0];
 
         public override MethodBody GetMethodBody() => m_methodBody;
 

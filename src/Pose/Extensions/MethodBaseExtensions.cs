@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace Pose.Extensions
 {
-    internal static class MethodBaseExtensions
+    public static class MethodBaseExtensions
     {
         public static bool InCoreLibrary(this MethodBase methodBase)
         {

@@ -1,14 +1,14 @@
+using Pose.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
-using Pose.Helpers;
 
 namespace Pose.IL
 {
-    internal static class Stubs
+    public static class Stubs
     {
         private static MethodInfo s_getMethodFromHandleMethod;
 
@@ -132,7 +132,7 @@ namespace Pose.IL
                 signatureParamTypes.ToArray(),
                 StubHelper.GetOwningModule(),
                 true);
-            
+
             ILGenerator ilGenerator = stub.GetILGenerator();
 
             if ((actualMethod.GetMethodBody() == null && !actualMethod.IsAbstract) || StubHelper.IsIntrinsic(actualMethod))
@@ -294,7 +294,7 @@ namespace Pose.IL
                 signatureParamTypes.Skip(1).ToArray(),
                 StubHelper.GetOwningModule(),
                 true);
-            
+
             ILGenerator ilGenerator = stub.GetILGenerator();
 
             if (constructor.GetMethodBody() == null || StubHelper.IsIntrinsic(constructor))
@@ -367,10 +367,10 @@ namespace Pose.IL
             DynamicMethod stub = new DynamicMethod(
                 StubHelper.CreateStubNameFromMethod("stub_ldftn", method),
                 typeof(IntPtr),
-                Array.Empty<Type>(),
+                new Type[0],
                 StubHelper.GetOwningModule(),
                 true);
-            
+
             ILGenerator ilGenerator = stub.GetILGenerator();
 
             if (method.GetMethodBody() == null || StubHelper.IsIntrinsic(method))
@@ -421,7 +421,7 @@ namespace Pose.IL
                 new Type[] { method.DeclaringType.IsInterface ? typeof(object) : method.DeclaringType },
                 StubHelper.GetOwningModule(),
                 true);
-            
+
             ILGenerator ilGenerator = stub.GetILGenerator();
 
             if ((method.GetMethodBody() == null && !method.IsAbstract) || StubHelper.IsIntrinsic(method))
@@ -462,7 +462,7 @@ namespace Pose.IL
 
             ilGenerator.MarkLabel(returnLabel);
             ilGenerator.Emit(OpCodes.Ret);
-            
+
             return stub;
         }
     }

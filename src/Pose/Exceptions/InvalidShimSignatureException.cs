@@ -1,7 +1,7 @@
 namespace Pose.Exceptions
 {
     [System.Serializable]
-    internal class InvalidShimSignatureException : System.Exception
+    public class InvalidShimSignatureException : System.Exception
     {
         public InvalidShimSignatureException() : base() { }
         public InvalidShimSignatureException(string message) : base(message) { }

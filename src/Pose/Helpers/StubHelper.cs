@@ -1,13 +1,12 @@
+using Pose.Extensions;
 using System;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
-using Pose.Extensions;
-
 namespace Pose.Helpers
 {
-    internal static class StubHelper
+    public static class StubHelper
     {
         public static IntPtr GetMethodPointer(MethodBase method)
         {
@@ -80,7 +79,7 @@ namespace Pose.Helpers
                 if (genericArguments.Length > 0)
                 {
                     name += "[";
-                    name += string.Join(',', genericArguments.Select(g => g.Name));
+                    name += string.Join(",", genericArguments.Select(g => g.Name));
                     name += "]";
                 }
             }

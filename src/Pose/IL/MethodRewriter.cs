@@ -1,20 +1,18 @@
+using Mono.Reflection;
+using Pose.Extensions;
+using Pose.Helpers;
+using Pose.IL.DebugHelpers;
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 
-using Mono.Reflection;
-
-using Pose.Extensions;
-using Pose.Helpers;
-using Pose.IL.DebugHelpers;
-
 namespace Pose.IL
 {
-    internal class MethodRewriter
+    public class MethodRewriter
     {
         private MethodBase m_method;
 
@@ -371,7 +369,7 @@ namespace Pose.IL
             // Throw exception to make this obvious.
             throw new NotSupportedException(instruction.OpCode.Name);
 
-        forward:
+            forward:
             ilGenerator.Emit(instruction.OpCode, constructorInfo);
         }
 
@@ -415,7 +413,7 @@ namespace Pose.IL
                 return;
             }
 
-        forward:
+            forward:
             ilGenerator.Emit(instruction.OpCode, methodInfo);
         }
 

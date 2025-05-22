@@ -9,8 +9,8 @@ namespace Pose
 {
     public static class PoseContext
     {
-        internal static Shim[] Shims { private set; get; }
-        internal static Dictionary<MethodBase, DynamicMethod> StubCache { private set; get; }
+        public static Shim[] Shims { private set; get; }
+        public static Dictionary<MethodBase, DynamicMethod> StubCache { private set; get; }
 
         public static void Isolate(Action entryPoint, params Shim[] shims)
         {

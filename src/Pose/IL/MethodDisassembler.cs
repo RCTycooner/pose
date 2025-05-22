@@ -1,12 +1,11 @@
-using System.Linq;
-using System.Collections.Generic;
-using System.Reflection;
-
 using Mono.Reflection;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace Pose.IL
 {
-    internal class MethodDisassembler
+    public class MethodDisassembler
     {
         private MethodBase _method;
 

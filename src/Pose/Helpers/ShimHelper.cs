@@ -9,7 +9,7 @@ using Pose.Extensions;
 
 namespace Pose.Helpers
 {
-    internal static class ShimHelper
+    public static class ShimHelper
     {
         public static MethodBase GetMethodFromExpression(Expression expression, bool setter, out Object instanceOrType)
         {

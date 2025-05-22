@@ -5,7 +5,7 @@ using System.Reflection.Emit;
 
 namespace Pose.IL.DebugHelpers
 {
-    internal class DynamicModule: Module
+    public class DynamicModule: Module
     {
         private static FieldInfo s_scopeField;
 

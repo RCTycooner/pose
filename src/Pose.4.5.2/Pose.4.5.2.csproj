@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F40906EB-F65E-4884-B090-264D7D0247D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pose._4._5._2</RootNamespace>
+    <AssemblyName>Pose.4.5.2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Reflection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Mono.Reflection.Core.1.1.1\lib\net45\Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Pose\Delegates\ActionRef.cs">
+      <Link>Delegates\ActionRef.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Delegates\FuncRef.cs">
+      <Link>Delegates\FuncRef.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Exceptions\InvalidShimSignatureException.cs">
+      <Link>Exceptions\InvalidShimSignatureException.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Extensions\DictionaryExtensions.cs">
+      <Link>Extensions\DictionaryExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Extensions\ILGeneratorExtensions.cs">
+      <Link>Extensions\ILGeneratorExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Extensions\MethodBaseExtensions.cs">
+      <Link>Extensions\MethodBaseExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Helpers\ShimHelper.cs">
+      <Link>Helpers\ShimHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Helpers\StubHelper.cs">
+      <Link>Helpers\StubHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\IL\DebugHelpers\BrowsableDynamicMethod.cs">
+      <Link>IL\DebugHelpers\BrowsableDynamicMethod.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\IL\DebugHelpers\DynamicMethodBody.cs">
+      <Link>IL\DebugHelpers\DynamicMethodBody.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\IL\DebugHelpers\DynamicModule.cs">
+      <Link>IL\DebugHelpers\DynamicModule.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\IL\ExceptionHandler.cs">
+      <Link>IL\ExceptionHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\IL\MethodDisassembler.cs">
+      <Link>IL\MethodDisassembler.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\IL\MethodRewriter.cs">
+      <Link>IL\MethodRewriter.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\IL\Stubs.cs">
+      <Link>IL\Stubs.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Is.cs">
+      <Link>Is.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\PoseContext.cs">
+      <Link>PoseContext.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Shim.cs">
+      <Link>Shim.cs</Link>
+    </Compile>
+    <Compile Include="..\Pose\Shim.Delegates.cs">
+      <Link>Shim.Delegates.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

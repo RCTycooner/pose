@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using Pose.Helpers;
+using System;
 using System.Linq.Expressions;
 using System.Reflection;
-
-using Pose.Helpers;
 
 namespace Pose
 {
@@ -15,7 +13,7 @@ namespace Pose
         private Type _type;
         private bool _setter;
 
-        internal MethodBase Original
+        public MethodBase Original
         {
             get
             {
@@ -23,7 +21,7 @@ namespace Pose
             }
         }
 
-        internal Delegate Replacement
+        public Delegate Replacement
         {
             get
             {
@@ -31,7 +29,7 @@ namespace Pose
             }
         }
 
-        internal Object Instance
+        public Object Instance
         {
             get
             {
@@ -39,7 +37,7 @@ namespace Pose
             }
         }
 
-        internal Type Type
+        public Type Type
         {
             get
             {

@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 
 namespace Pose.Extensions
 {
-    internal static class ILGeneratorExtensions
+    public static class ILGeneratorExtensions
     {
         public static byte[] GetILBytes(this ILGenerator ilGenerator)
         {

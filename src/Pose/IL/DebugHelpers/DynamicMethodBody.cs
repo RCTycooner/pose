@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Pose.IL.DebugHelpers
 {
-    internal class DynamicMethodBody : MethodBody
+    public class DynamicMethodBody : MethodBody
     {
         private readonly byte[] m_ilBytes;
 
